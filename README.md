@@ -1,4 +1,4 @@
-z# Project Pegasus 🚀
+## Project Pegasus 🚀
 
 **An Advanced AI-Powered Voice Assistant with Full User Control**
 
