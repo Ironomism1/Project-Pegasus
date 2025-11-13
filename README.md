@@ -1,4 +1,4 @@
-# Project Pegasus 🚀
+z# Project Pegasus 🚀
 
 **An Advanced AI-Powered Voice Assistant with Full User Control**
 
@@ -324,6 +324,5 @@ For issues, questions, or suggestions:
 
 ---
 
-**Made with ❤️ by the Project Pegasus Team**
 
 *"Your AI, Your Rules, Your Control"*
