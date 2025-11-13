@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+/* Import a futuristic font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0a0a1a; /* A very dark blue, almost black */
+  overflow: hidden; /* Prevents scrollbars from the animation */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+/* This is our MOVING CHARACTERS effect */
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(ellipse at 30% 20%, rgba(0, 255, 255, 0.3) 0%, transparent 70%),
+    radial-gradient(ellipse at 70% 80%, rgba(120, 0, 255, 0.3) 0%, transparent 70%);
+  animation: moveAndFade 15s ease-in-out infinite;
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes moveAndFade {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(40px, -60px) scale(1.5); opacity: 0.4; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+}
+
+/* The main login form box with a "glass" effect */
+.login-box {
+  background: rgba(10, 10, 26, 0.6); /* Semi-transparent dark blue */
+  backdrop-filter: blur(10px); /* This creates the frosted glass effect */
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 40px;
+  width: 350px;
+  z-index: 2; /* Ensures the login box is on top of the animation */
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+  text-align: center;
+  color: #fff;
+}
+
+.login-header h2 {
+  font-size: 2.5em;
+  color: #00ffff; /* Bright cyan color */
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  margin: 0;
+}
+
+.login-header p {
+  color: #aaa;
+  letter-spacing: 2px;
+  font-size: 0.8em;
+  margin-bottom: 30px;
+}
+
+/* Styling for the input fields */
+.input-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #00ffff;
+  outline: none;
+  color: #fff;
+  font-size: 1em;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.input-group label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: #aaa;
+  pointer-events: none;
+  transition: .5s;
+}
+
+/* Animation for the labels when you click the input */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #00ffff;
+  font-size: 0.8em;
+}
+
+/* Styling for the submit button */
+button {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  border: 2px solid #00ffff;
+  border-radius: 5px;
+  color: #00ffff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .5s;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+button:hover {
+  background: #00ffff;
+  color: #0a0a1a;
+  box-shadow: 0 0 20px #00ffff;
+}
+/* Add this to the end of your src/App.css file */
+.login-status {
+  margin-top: 20px;
+  color: #00ffff;
+  font-size: 0.9em;
+  min-height: 20px;
 }

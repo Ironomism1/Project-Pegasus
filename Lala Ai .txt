@@ -1,0 +1,56 @@
+Lala Ai Features :
+
+
+
+*|Hardware(current)
+
+1) powered usb hub:
+https://amzn.in/d/fttrk98
+2) Hard drives (as much as possible) 
+
+
+*|current 
+
+1) Main interface voice side interface chat 
+2) can be taught new words 
+3) contains 3 language (Hindi , English and hinglish)
+4)custom modified model and can be altered and changed as my personnel needs later in future
+5) data and model stored in hard drive and in future multiple hard drive
+6) a uncensored model which I can teach to make t it stronger model is craked or open sourced so I can be  its admin and have full control model need to be powerful but currently also fit in 500 gb hdd hard drive for now . I will add more later. also in future same model t be splitted and stored in multiple drive in future.
+7) currently I waana first build model  I will and English and further advancement later.
+8) lets do it step by step also I want to research how to upgrade our model without losing data like making it better and all.
+9)gotta find best llm model.
+10) will create best interface.
+
+
+
+
+
+
+
+
+
+*|planned
+1) have good interface
+2) contain custom made voice 
+3) sleek interface with taking animation and when asked something  only shows data and explains with pointer.
+4) teaches itself and latest thing by checking the web.
+5) deleted duplicate data or things and work storage efficient.
+
+
+
+
+
+
+
+
+
+
+
+
+*|Future
+
+1)can control my pc and phone to do orders I say.
+2) contain multiple model or multiple work lke controlling mobile , pc  , generating image and audio and everything.
+3) add privacy option so that instead of sending all private data  directly to server it asks permission before accessing ur info and also gives option to delete info after use or store it in ur pc and use it locally
+4) get hardware upgrade speak to me and work with a custom built robotic body with arms and all and follow my commands. I will use simulated learning to teach it how to do.gotta use modules like Arduino.

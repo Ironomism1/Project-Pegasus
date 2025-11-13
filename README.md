@@ -1,70 +1,329 @@
-# Getting Started with Create React App
+# Project Pegasus 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**An Advanced AI-Powered Voice Assistant with Full User Control**
 
-## Available Scripts
+Project Pegasus is a sophisticated, open-source AI assistant system that combines voice interaction, multi-language support, and a custom-built machine learning model. It's designed to be powerful, privacy-focused, and fully under your control—not locked behind cloud services.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🎯 Project Vision
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Project Pegasus aims to create an intelligent, uncensored AI assistant that:
+- **Operates Locally**: Runs on your own hardware without relying on external cloud services
+- **Respects Privacy**: Asks for permission before accessing sensitive data and can store everything locally
+- **Learns Continuously**: Improves over time and can be customized to your specific needs
+- **Supports Multiple Languages**: Currently supports English, Hindi, and Hinglish
+- **Stays Affordable**: Custom model optimized to fit within 500GB, scalable with additional storage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ✨ Current Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Core Features
+- **Voice Interface**: Natural language voice input and processing
+- **Chat Interface**: Intuitive chat-based interaction
+- **Multi-Language Support**: English, Hindi, and Hinglish (Hindi-English Mix)
+- **Custom AI Model**: Open-sourced, cracked model with full admin control
+- **User Authentication**: Secure login system with role-based access (Admin, Co-admin, User)
+- **Persistent Storage**: SQLite database for user data and conversation history
+- **Audio Support**: Built-in audio handling capabilities
 
-### `npm run build`
+### Technical Architecture
+- **Frontend**: React-based UI with GSAP animations
+- **Backend**: Express.js REST API
+- **Database**: SQLite for local data storage
+- **Security**: Bcrypt password hashing, CORS protection
+- **Speech Recognition**: Web-based speech recognition capabilities
+- **Internationalization**: i18n support for multiple languages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔮 Planned Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Near-Term
+- Improved UI/UX with sleek animations
+- Animated responses with data pointers
+- Self-learning capabilities
+- Web scraping integration for latest information
+- Storage optimization and duplicate data removal
 
-### `npm run eject`
+### Future Enhancements
+- **System Control**: PC and mobile device automation
+- **Multi-Model Support**: Support for multiple specialized models (image generation, audio synthesis, etc.)
+- **Advanced Privacy**: Granular permission controls for data access
+- **Robotic Integration**: Support for robotic hardware with custom-built body
+- **Simulated Learning**: Training via simulated environments
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📋 Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Before setting up Project Pegasus, ensure you have:
+- **Node.js** (v14 or higher)
+- **npm** (comes with Node.js)
+- **Python** (optional, for future model training)
+- At least 1GB of disk space for initial setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🚀 Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1. **Clone the Repository**
+```bash
+git clone https://github.com/Ironomism1/Project-Pegasus.git
+cd Project-Pegasus
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. **Install Frontend Dependencies**
+```bash
+npm install
+```
 
-### Code Splitting
+### 3. **Install Backend Dependencies**
+```bash
+cd backend
+npm install
+cd ..
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 4. **Start the Backend Server**
+Open a new terminal window and run:
+```bash
+cd backend
+node server.js
+```
+The backend server will run on `http://localhost:3001`
 
-### Analyzing the Bundle Size
+### 5. **Start the Frontend (in original terminal)**
+```bash
+npm start
+```
+The application will open at `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 6. **Access the Application**
+- Open your browser and navigate to `http://localhost:3000`
+- Login with default credentials:
+  - **Username**: `main_admin` | **Password**: `password123` (Admin role)
+  - **Username**: `regular_user` | **Password**: `password123` (User role)
+  - **Username**: `co_admin_user` | **Password**: `password123` (Co-admin role)
 
-### Making a Progressive Web App
+⚠️ **Security Note**: Change these credentials in production!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🏗️ Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+project-pegasus/
+├── public/                 # Static files
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── src/                    # React frontend source code
+│   ├── components/
+│   │   ├── ChatWindow.js   # Main chat interface
+│   │   ├── LoginPage.js    # User authentication
+│   │   ├── LanguageModal.js # Language selection
+│   │   ├── SettingsModal.js # User settings
+│   │   └── UserPage.js     # User dashboard
+│   ├── locales/            # i18n translation files
+│   │   ├── en/translation.json
+│   │   ├── hi/translation.json
+│   ├── App.js              # Main React component
+│   ├── i18n.js             # i18n configuration
+│   └── index.js            # React entry point
+├── backend/                # Express.js backend
+│   ├── server.js           # Main server file
+│   ├── internal_rules.txt  # AI behavior rules
+│   ├── audio/              # Audio files storage
+│   └── package.json        # Backend dependencies
+├── Models/                 # AI Models
+│   ├── Parts/
+│   └── [Model files]
+├── package.json            # Frontend dependencies
+└── README.md               # This file
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🛠️ Technology Stack
 
-### `npm run build` fails to minify
+### Frontend
+- **React 19.2**: Modern UI framework
+- **React Router**: Navigation and routing
+- **i18next**: Internationalization
+- **GSAP**: Advanced animations
+- **React Speech Recognition**: Voice input
+- **React Icons**: Icon library
+- **React Markdown**: Markdown rendering
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Backend
+- **Express.js**: REST API framework
+- **SQLite3**: Lightweight database
+- **Bcrypt**: Password hashing
+- **CORS**: Cross-origin resource sharing
+- **Cheerio**: Web scraping
+- **Node Fetch**: HTTP requests
+
+---
+
+## 🔐 Security Features
+
+- **Role-Based Access Control**: Admin, Co-admin, and User roles
+- **Password Hashing**: Bcrypt with 10 salt rounds
+- **Secure Database**: SQLite with proper table structure
+- **CORS Protection**: Whitelist origin requests
+- **Input Validation**: Server-side validation on all inputs
+
+---
+
+## 📝 Default Users
+
+| Username | Password | Role |
+|----------|----------|------|
+| main_admin | password123 | Admin |
+| regular_user | password123 | User |
+| co_admin_user | password123 | Co-admin |
+
+---
+
+## 🎤 Using Voice Features
+
+1. Click the microphone icon in the chat interface
+2. Speak your query
+3. The AI will process and respond
+4. Select your preferred language from settings
+
+---
+
+## 🌍 Language Support
+
+Project Pegasus currently supports:
+- **English**: Full support
+- **Hindi**: Full support  
+- **Hinglish**: Hindi-English mix for natural Indian English speakers
+
+Add more languages by extending the translation files in `src/locales/`
+
+---
+
+## 📊 Database Schema
+
+### Users Table
+```sql
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT NOT NULL UNIQUE,
+  password TEXT NOT NULL,
+  role TEXT NOT NULL CHECK(role IN ('admin', 'user', 'co-admin')),
+  language TEXT DEFAULT 'english'
+);
+```
+
+### Messages Table
+```sql
+CREATE TABLE messages (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  role TEXT NOT NULL,
+  content TEXT NOT NULL,
+  timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users (id)
+);
+```
+
+---
+
+## 🚦 Running Commands Reference
+
+### Development
+```bash
+# Start frontend
+npm start
+
+# Start backend (in separate terminal)
+cd backend && node server.js
+
+# Build frontend for production
+npm run build
+
+# Run tests
+npm test
+```
+
+### Backend Server
+```bash
+# Default runs on port 3001
+node backend/server.js
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### Backend won't start
+- Ensure port 3001 is available
+- Check Node.js version: `node -v`
+- Verify SQLite is installed: `npm list sqlite3`
+
+### Frontend won't start
+- Clear npm cache: `npm cache clean --force`
+- Delete `node_modules`: `rm -r node_modules`
+- Reinstall: `npm install`
+
+### Database errors
+- Delete old database: `rm backend/lala_ai.db`
+- Restart backend to create new database
+
+### Port conflicts
+- Change port in `backend/server.js` if 3001 is in use
+
+---
+
+## 🚀 Future Roadmap
+
+- [ ] GPU acceleration for faster inference
+- [ ] Fine-tuning capabilities for custom knowledge
+- [ ] Multi-model support (vision, audio generation)
+- [ ] Desktop app wrapper (Electron)
+- [ ] Mobile app integration
+- [ ] Real-time model updates
+- [ ] Privacy-first data encryption
+- [ ] Robotic hardware support
+
+---
+
+## 📄 License
+
+This project is licensed under the ISC License.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 💡 Project Goals
+
+**Short Term**: Build a robust, fully functional AI assistant with voice support and multi-language capabilities.
+
+**Medium Term**: Optimize storage efficiency, add self-learning features, and implement advanced UI animations.
+
+**Long Term**: Create a complete ecosystem with PC/mobile control, multiple specialized models, and robotic hardware integration.
+
+---
+
+## 📞 Support
+
+For issues, questions, or suggestions:
+- Open an issue on GitHub
+- Check existing issues for solutions
+- Review the internal_rules.txt for AI behavior guidelines
+
+---
+
+**Made with ❤️ by the Project Pegasus Team**
+
+*"Your AI, Your Rules, Your Control"*
