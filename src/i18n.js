@@ -1,37 +1,34 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+// src/intl.js
+import i18n from './i18n';
 
-// --- NEW: Import translation files directly ---
-import enTranslations from './locales/en/translation.json';
-import hiTranslations from './locales/hi/translation.json';
+export const getLocale = () => i18n.language || 'en';
 
-i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
-  .init({
-    // --- NEW: Use a 'resources' object instead of the backend loader ---
-    resources: {
-      en: {
-        translation: enTranslations,
-      },
-      hi: {
-        translation: hiTranslations,
-      },
-    },
-    lng: 'en', // Set the initial language
-    fallbackLng: 'en', // Use English if a translation is missing
-    interpolation: {
-      escapeValue: false, // React already safes from xss
-    },
-  }, (err, t) => {
-    if (err) {
-      // eslint-disable-next-line no-console
-      console.error('i18n init error:', err);
-    } else {
-      // eslint-disable-next-line no-console
-      console.log('i18n initialized. Current language:', i18n.language);
-      // eslint-disable-next-line no-console
-      console.log('i18n resources:', Object.keys(i18n.options.resources || {}));
-    }
-  });
+export const t = (key, values, options) => i18n.t(key, { ...values, ns: options?.ns });
 
-export default i18n;
+export const formatNumber = (value, opts) =>
+  new Intl.NumberFormat(getLocale(), opts).format(value);
+
+export const formatCurrency = (amount, currency = 'INR') =>
+  formatNumber(amount, { style: 'currency', currency });
+
+export const formatDate = (date, opts = { year: 'numeric', month: 'short', day: 'numeric' }) => {
+  const d = typeof date === 'string' || typeof date === 'number' ? new Date(date) : date;
+  return new Intl.DateTimeFormat(getLocale(), opts).format(d);
+};
+
+export const formatRelativeTime = (value, unit) =>
+  new Intl.RelativeTimeFormat(getLocale(), { numeric: 'auto' }).format(value, unit);
+
+// React-friendly hook
+import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+
+export const useIntl = () => {
+  useTranslation(); // subscribes to language changes
+  const n = useCallback((v, o) => formatNumber(v, o), []);
+  const c = useCallback((v, curr) => formatCurrency(v, curr), []);
+  const d = useCallback((v, o) => formatDate(v, o), []);
+  const rt = useCallback((val, unit) => formatRelativeTime(val, unit), []);
+  const tr = useCallback((key, values, options) => t(key, values, options), []);
+  return { locale: getLocale(), t: tr, formatNumber: n, formatCurrency: c, formatDate: d, formatRelativeTime: rt, changeLanguage: i18n.changeLanguage.bind(i18n) };
+};
